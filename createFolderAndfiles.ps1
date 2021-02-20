@@ -35,3 +35,6 @@ foreach($folder in Get-ChildItem $Global:currrentLocation\$Global:mainFolder) {
 New-Item -ItemType File $Global:currrentLocation\$Global:mainFolder\fileToRemove.txt
 
 Add-Content $Global:currrentLocation\$Global:mainFolder\fileToRemove.txt "This file will be deleted."
+
+# Remove the file to delete from current directory and all sub folders
+Get-ChildItem . -recurse -include fileToRemove.txt | remove-item
