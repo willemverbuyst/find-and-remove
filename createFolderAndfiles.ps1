@@ -5,7 +5,7 @@ $Global:currrentLocation = Get-Location
 $Global:mainFolder = "Profiles"
 
 # List with folders to create
-$Global:fileWithfolderNames = "profiles.txt"
+$Global:fileWithFolderNames = "profiles.txt"
 
 # Delete Profiles folder and its content
 Remove-Item $Global:currrentLocation\$Global:mainFolder -Force -Recurse
@@ -14,7 +14,7 @@ Remove-Item $Global:currrentLocation\$Global:mainFolder -Force -Recurse
 New-Item -ItemType Directory -Path $Global:currrentLocation\$Global:mainFolder
 
 # Get the names of the folders to create from text-file
-$Global:foldersToCreate = Get-Content -Path $fileWithfolderNames
+$Global:foldersToCreate = Get-Content -Path $fileWithFolderNames
 
 # Loop to create a folder for each item on the list
 foreach ($folder in $Global:foldersToCreate) {
